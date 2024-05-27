@@ -83,6 +83,21 @@
     }
 }
 
+@layer base {
+    h1 {
+        @apply text-2xl py-1.5;
+    }
+    h2 {
+        @apply text-xl py-1;
+    }
+    h3 {
+        @apply text-lg py-0.5;
+    }
+    a {
+        @apply text-blue-600 underline;
+    }
+}
+
 figure {
     overflow-x: auto;
     max-width: calc(100vw - 11rem);
