@@ -18,6 +18,9 @@ export default function Home() {
     const { messages, setMessages, input, handleInputChange, handleSubmit } =
         useChat({
             api: `api/chat?model=${model}`,
+            onFinish: (message) => {
+                // check if this is a first message
+            },
         });
 
     useEffect(() => {
@@ -37,7 +40,7 @@ export default function Home() {
     }, [messages]);
 
     return (
-        <main className="flex-1 px-6 py-5 overflow-y-auto">
+        <main className="flex-1 sm:px-1 lg:px-6 py-5 overflow-y-auto">
             <section className="flex-1 gap-4 mb-24 container">
                 {messages &&
                     messages.length > 0 &&

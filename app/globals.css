@@ -73,6 +73,19 @@
     body {
         @apply bg-background text-foreground;
     }
+
+    ::-webkit-scrollbar {
+        @apply bg-muted/20 w-2 rounded-md;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-muted rounded-sm;
+    }
+}
+
+figure {
+    overflow-x: auto;
+    max-width: calc(100vw - 11rem);
 }
 
 pre {

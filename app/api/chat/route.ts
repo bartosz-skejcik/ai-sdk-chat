@@ -18,7 +18,7 @@ export async function POST(req: Request) {
 
     const result = await streamText({
         model: groq(model),
-        system: "You are a helpful assistant.",
+        system: "You are a helpful assistant. Leverage all of the mdx format for more complex responses like lists, headings, text formatting and code blocks. for simple and short responses use usual text.",
         messages,
     });
 

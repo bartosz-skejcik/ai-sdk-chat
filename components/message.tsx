@@ -47,7 +47,7 @@ function Message({ role, content, dateTime, setMessages, messages }: Props) {
 
     return (
         <div
-            className={`w-full p-2 flex items-start justify-start gap-2 ${
+            className={`w-full max-w-5/6 md:max-w-full p-1 md:p-2 flex items-start justify-start gap-2 ${
                 role === "user" ? "flex-row-reverse" : "flex-row"
             }`}
         >
@@ -67,7 +67,7 @@ function Message({ role, content, dateTime, setMessages, messages }: Props) {
                     }`}
                 >
                     <div
-                        className={`px-3 py-1 rounded-md ${
+                        className={`px-3 py-1 text-sm sm:text-base leading-loose rounded-md ${
                             role === "user"
                                 ? "bg-primary"
                                 : "border border-border"
@@ -82,7 +82,7 @@ function Message({ role, content, dateTime, setMessages, messages }: Props) {
                         }}
                         className="p-0.5 rounded-md group-hover:bg-muted text-muted group-hover:text-primary"
                     >
-                        <Trash2 className="w-5 h-5 text-foreground" />
+                        <Trash2 className="sm:w-5 w-4 sm:h-5 h-4 text-foreground" />
                     </button>
                 </div>
                 {dateTime && (
