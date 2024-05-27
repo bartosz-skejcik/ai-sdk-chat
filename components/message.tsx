@@ -21,7 +21,7 @@ function Message({ role, content, dateTime, setMessages, messages }: Props) {
             (content.includes("`") || content.includes("*")) &&
             mdxSource == undefined
         ) {
-            fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/mdx`, {
+            fetch(`api/mdx`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
