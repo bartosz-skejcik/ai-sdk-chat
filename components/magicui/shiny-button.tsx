@@ -25,14 +25,17 @@ const animationProps = {
 type Props = {
     text?: string;
     type?: "button" | "submit" | "reset" | undefined;
+    icon?: JSX.Element;
 };
 
-const ShinyButton = ({ text = "shiny-button", type }: Props) => {
+const ShinyButton = ({ text = "shiny-button", type, icon }: Props) => {
     return (
         <motion.button
             type={type}
             {...animationProps}
-            className="relative rounded-lg px-6 py-2.5 font-medium backdrop-blur-xl transition-[box-shadow] duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/10%)_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_hsl(var(--primary)/10%)] h-fit"
+            className={`relative rounded-lg ${
+                icon ? "p-3" : "px-6 py-2.5"
+            } font-medium backdrop-blur-xl transition-[box-shadow] duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/10%)_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_hsl(var(--primary)/10%)] h-fit`}
         >
             <span
                 className="relative block h-full w-full text-sm tracking-wide text-[rgb(0,0,0,65%)] dark:font-light dark:text-[rgb(255,255,255,90%)]"
@@ -41,7 +44,7 @@ const ShinyButton = ({ text = "shiny-button", type }: Props) => {
                         "linear-gradient(-75deg,hsl(var(--primary)) calc(var(--x) + 20%),transparent calc(var(--x) + 30%),hsl(var(--primary)) calc(var(--x) + 100%))",
                 }}
             >
-                {text}
+                {icon ?? text}
             </span>
             <span
                 style={{
