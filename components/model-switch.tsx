@@ -16,7 +16,7 @@ import { ChevronDown } from "lucide-react";
 
 type Props = {};
 
-function ModelSwitch({}: Props) {
+function ModelSwitch({ }: Props) {
     const model = useStore(preferencesStore, (state) => state.model);
 
     const changeModel = (model: string) => {
@@ -33,6 +33,7 @@ function ModelSwitch({}: Props) {
         "llama3-70b-8192",
         "mixtral-8x7b-32768",
         "gemma-7b-it",
+        "llama-3.1-70b-versatile"
     ];
 
     return (
